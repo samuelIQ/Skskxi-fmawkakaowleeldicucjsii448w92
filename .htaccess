@@ -1,0 +1,12 @@
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header unset X-Powered-By
+</IfModule>
+
+<FilesMatch "\.(sql|log|md|bak)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
